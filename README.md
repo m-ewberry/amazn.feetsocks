@@ -6,45 +6,52 @@ Rickrolled!
   <title>Video</title>
 
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      background: #ffffff; /* pure white */
-      height: 100%;
-    }
-
     body {
+      margin: 0;
+      background: white;
       display: flex;
       justify-content: center;
       align-items: center;
+      height: 100vh;
+      overflow: hidden;
     }
 
     .video-container {
       aspect-ratio: 3 / 4;
       width: 92vw;
       max-width: 420px;
-      background: #ffffff; /* ensures no dark edges */
+      position: relative;
+      cursor: pointer;
     }
 
     iframe {
       width: 100%;
       height: 100%;
       border: none;
-      border-radius: 12px;
-      background: #ffffff; /* forces white inside frame edges */
+      border-radius: 10px;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="video-container">
+  <div class="video-container" onclick="startVideo()">
+    
     <iframe 
-      src="https://player.vimeo.com/video/117635672?loop=1&background=0&title=0&byline=0&portrait=0"
+      id="video"
+      src="https://www.youtube.com/embed/7X1H5AxJPb8?loop=1&playlist=7X1H5AxJPb8"
       allow="autoplay; fullscreen">
     </iframe>
+
   </div>
+
+  <script>
+    function startVideo() {
+      const iframe = document.getElementById("video");
+      iframe.src = "https://www.youtube.com/embed/7X1H5AxJPb8?autoplay=1&loop=1&playlist=7X1H5AxJPb8";
+    }
+  </script>
 
 </body>
 </html>
->
+
